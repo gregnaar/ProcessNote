@@ -13,47 +13,54 @@ namespace ProcessNote
 {
     public partial class ProcessNote : Form
     {
-        System.Windows.Forms.Timer t;
-        bool run = true;
+        Process[] processes;
 
         public ProcessNote()
         {
             InitializeComponent();
+            button1.Click += button1_Click;
         }
 
+        
         private void ProcessNote_Load(object sender, EventArgs e)
         {
-            t = new System.Windows.Forms.Timer();
-            t.Interval = 3000;
-            t.Tick += new EventHandler(t_Tick);
-            t.Start();
+            getProcesses();
+            getCpuUsage();
+            getRamUsage();
         }
-
-        void t_Tick(object sender, EventArgs e)
+        
+        void getProcesses()
         {
-            refreshTasks();
-            if ( run == false ) t.Stop();
-        }
-
-        void refreshTasks()
-        {
-            Process[] processes = Process.GetProcesses();
-            var sorted = processes.OrderBy(item => item.ProcessName);
-            listBox1.Items.Clear();
-            
-
-            foreach (Process process in sorted)
+            processes = Process.GetProcesses();
+            if (Convert.ToInt32(label2.Text) != processes.Length)
             {
-                listBox1.Items.Add(string.Format("Process name: {0} Process Id: {1}", process.ProcessName, process.Id));
+                listBox1.Items.Clear();
+                processes = Process.GetProcesses();
+
+                foreach (Process process in processes)
+                {
+                    listBox1.Items.Add(string.Format("Process: {0}", process.ProcessName));
+                }
+                label2.Text = string.Format("{0}", processes.Length);
             }
-            textBox1.Text = string.Format("Running processes: {0}", sorted.Count());
         }
 
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        void getCpuUsage()
         {
             
+            var useless = string.Format("{0:#,###.##} %", performanceCounter1.NextValue());
+            label4.Text = string.Format("{0:#,###.##} %", performanceCounter1.NextValue());
+
         }
+
+        void getRamUsage()
+        {
+
+            var useless = string.Format("{0:#,###.##} Mb", performanceCounter2.NextValue());
+            label6.Text = string.Format("{0:#,###.##} Mb", performanceCounter2.NextValue());
+
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -64,6 +71,21 @@ namespace ProcessNote
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            getProcesses();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            processes[listBox1.SelectedIndex].Kill();
+        }
+
+        private void killProcessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processes[listBox1.SelectedIndex].Kill();
         }
     }
 }
