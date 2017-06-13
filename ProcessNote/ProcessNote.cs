@@ -125,7 +125,7 @@ namespace ProcessNote
                     RunningTime = "Access Denied";
 
                 }
-                DetailedListBox.Items.Add("Start Time:\t " + processStart);
+                DetailedListBox.Items.Add("Start Time:\t" + processStart);
                 DetailedListBox.Items.Add("Runnig Time:\t" + RunningTime);
                 DetailedListBox.Items.Add("Allocated Memory:\t" + Convert.ToString(focusedProcess.PrivateMemorySize64 / 1048576) + " MB");
                 DetailedListBox.Items.Add("CPU usage:\t" + "1%");

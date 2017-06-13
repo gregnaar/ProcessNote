@@ -55,7 +55,7 @@
             // 
             // TasksListBox
             // 
-            this.TasksListBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.TasksListBox.BackColor = System.Drawing.Color.White;
             this.TasksListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TasksListBox.ContextMenuStrip = this.KillProcessMenuStrip;
             this.TasksListBox.Dock = System.Windows.Forms.DockStyle.Left;
@@ -64,7 +64,7 @@
             this.TasksListBox.ItemHeight = 16;
             this.TasksListBox.Location = new System.Drawing.Point(0, 0);
             this.TasksListBox.Name = "TasksListBox";
-            this.TasksListBox.Size = new System.Drawing.Size(402, 425);
+            this.TasksListBox.Size = new System.Drawing.Size(374, 425);
             this.TasksListBox.TabIndex = 0;
             this.TasksListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -85,7 +85,7 @@
             // ExitApplicationButton
             // 
             this.ExitApplicationButton.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ExitApplicationButton.Location = new System.Drawing.Point(474, 385);
+            this.ExitApplicationButton.Location = new System.Drawing.Point(505, 385);
             this.ExitApplicationButton.Name = "ExitApplicationButton";
             this.ExitApplicationButton.Size = new System.Drawing.Size(136, 28);
             this.ExitApplicationButton.TabIndex = 1;
@@ -96,9 +96,10 @@
             // EndProcessButton
             // 
             this.EndProcessButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EndProcessButton.Location = new System.Drawing.Point(474, 42);
+            this.EndProcessButton.ForeColor = System.Drawing.Color.Maroon;
+            this.EndProcessButton.Location = new System.Drawing.Point(547, 37);
             this.EndProcessButton.Name = "EndProcessButton";
-            this.EndProcessButton.Size = new System.Drawing.Size(117, 25);
+            this.EndProcessButton.Size = new System.Drawing.Size(94, 30);
             this.EndProcessButton.TabIndex = 3;
             this.EndProcessButton.Text = "End Process";
             this.EndProcessButton.UseVisualStyleBackColor = true;
@@ -114,7 +115,7 @@
             // 
             this.Processlabel.AutoSize = true;
             this.Processlabel.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Processlabel.Location = new System.Drawing.Point(470, 19);
+            this.Processlabel.Location = new System.Drawing.Point(387, 47);
             this.Processlabel.Name = "Processlabel";
             this.Processlabel.Size = new System.Drawing.Size(79, 20);
             this.Processlabel.TabIndex = 5;
@@ -124,7 +125,7 @@
             // 
             this.ProcessValueLabel.AutoSize = true;
             this.ProcessValueLabel.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ProcessValueLabel.Location = new System.Drawing.Point(574, 19);
+            this.ProcessValueLabel.Location = new System.Drawing.Point(487, 47);
             this.ProcessValueLabel.Name = "ProcessValueLabel";
             this.ProcessValueLabel.Size = new System.Drawing.Size(17, 20);
             this.ProcessValueLabel.TabIndex = 6;
@@ -134,7 +135,7 @@
             // 
             this.CpuUsageLabel.AutoSize = true;
             this.CpuUsageLabel.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CpuUsageLabel.Location = new System.Drawing.Point(416, 70);
+            this.CpuUsageLabel.Location = new System.Drawing.Point(388, 70);
             this.CpuUsageLabel.Name = "CpuUsageLabel";
             this.CpuUsageLabel.Size = new System.Drawing.Size(75, 18);
             this.CpuUsageLabel.TabIndex = 7;
@@ -144,7 +145,7 @@
             // 
             this.CpuUsageValueLabel.AutoSize = true;
             this.CpuUsageValueLabel.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CpuUsageValueLabel.Location = new System.Drawing.Point(497, 70);
+            this.CpuUsageValueLabel.Location = new System.Drawing.Point(489, 70);
             this.CpuUsageValueLabel.Name = "CpuUsageValueLabel";
             this.CpuUsageValueLabel.Size = new System.Drawing.Size(15, 18);
             this.CpuUsageValueLabel.TabIndex = 8;
@@ -154,7 +155,7 @@
             // 
             this.AvailableMemoryLabel.AutoSize = true;
             this.AvailableMemoryLabel.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AvailableMemoryLabel.Location = new System.Drawing.Point(416, 88);
+            this.AvailableMemoryLabel.Location = new System.Drawing.Point(388, 88);
             this.AvailableMemoryLabel.Name = "AvailableMemoryLabel";
             this.AvailableMemoryLabel.Size = new System.Drawing.Size(122, 18);
             this.AvailableMemoryLabel.TabIndex = 9;
@@ -164,7 +165,7 @@
             // 
             this.AvailableMemoryValueLabel.AutoSize = true;
             this.AvailableMemoryValueLabel.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AvailableMemoryValueLabel.Location = new System.Drawing.Point(544, 88);
+            this.AvailableMemoryValueLabel.Location = new System.Drawing.Point(516, 88);
             this.AvailableMemoryValueLabel.Name = "AvailableMemoryValueLabel";
             this.AvailableMemoryValueLabel.Size = new System.Drawing.Size(15, 18);
             this.AvailableMemoryValueLabel.TabIndex = 10;
@@ -185,7 +186,7 @@
             // 
             this.OnTopcheckBox.AutoSize = true;
             this.OnTopcheckBox.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.OnTopcheckBox.Location = new System.Drawing.Point(474, 353);
+            this.OnTopcheckBox.Location = new System.Drawing.Point(391, 12);
             this.OnTopcheckBox.Name = "OnTopcheckBox";
             this.OnTopcheckBox.Size = new System.Drawing.Size(136, 26);
             this.OnTopcheckBox.TabIndex = 12;
@@ -195,21 +196,21 @@
             // 
             // DetailedListBox
             // 
-            this.DetailedListBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.DetailedListBox.BackColor = System.Drawing.Color.White;
             this.DetailedListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DetailedListBox.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DetailedListBox.FormattingEnabled = true;
             this.DetailedListBox.ItemHeight = 16;
-            this.DetailedListBox.Location = new System.Drawing.Point(408, 109);
+            this.DetailedListBox.Location = new System.Drawing.Point(391, 109);
             this.DetailedListBox.Name = "DetailedListBox";
-            this.DetailedListBox.Size = new System.Drawing.Size(239, 146);
+            this.DetailedListBox.Size = new System.Drawing.Size(250, 146);
             this.DetailedListBox.TabIndex = 13;
             // 
             // CommentFieldLabel
             // 
             this.CommentFieldLabel.AutoSize = true;
             this.CommentFieldLabel.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CommentFieldLabel.Location = new System.Drawing.Point(419, 262);
+            this.CommentFieldLabel.Location = new System.Drawing.Point(387, 263);
             this.CommentFieldLabel.Name = "CommentFieldLabel";
             this.CommentFieldLabel.Size = new System.Drawing.Size(117, 20);
             this.CommentFieldLabel.TabIndex = 14;
@@ -217,18 +218,18 @@
             // 
             // CommentFieldTextBox
             // 
-            this.CommentFieldTextBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.CommentFieldTextBox.BackColor = System.Drawing.Color.LightYellow;
             this.CommentFieldTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CommentFieldTextBox.Location = new System.Drawing.Point(408, 286);
+            this.CommentFieldTextBox.Location = new System.Drawing.Point(391, 286);
             this.CommentFieldTextBox.Name = "CommentFieldTextBox";
-            this.CommentFieldTextBox.Size = new System.Drawing.Size(239, 20);
+            this.CommentFieldTextBox.Size = new System.Drawing.Size(250, 20);
             this.CommentFieldTextBox.TabIndex = 15;
             this.CommentFieldTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // AddCommentButton
             // 
             this.AddCommentButton.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AddCommentButton.Location = new System.Drawing.Point(491, 312);
+            this.AddCommentButton.Location = new System.Drawing.Point(547, 312);
             this.AddCommentButton.Name = "AddCommentButton";
             this.AddCommentButton.Size = new System.Drawing.Size(94, 23);
             this.AddCommentButton.TabIndex = 16;
@@ -240,6 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(653, 425);
             this.Controls.Add(this.AddCommentButton);
             this.Controls.Add(this.CommentFieldTextBox);
@@ -255,6 +257,7 @@
             this.Controls.Add(this.EndProcessButton);
             this.Controls.Add(this.ExitApplicationButton);
             this.Controls.Add(this.TasksListBox);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "ProcessNote";
             this.Text = "ProcessNote";
             this.Load += new System.EventHandler(this.ProcessNote_Load);
