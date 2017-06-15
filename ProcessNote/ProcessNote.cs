@@ -16,7 +16,6 @@ namespace ProcessNote
         {
             InitializeComponent();
         }
-
         
         private void ProcessNote_Load(object sender, EventArgs e)
         {
@@ -62,17 +61,11 @@ namespace ProcessNote
             AvailableMemoryValueLabel.Text = string.Format("{0:#,###.##} Mb", performanceCounterRAM.NextValue());
 
         }
-
-
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void exitApplicationButton_Click(object sender, EventArgs e)
         {
             TasksListBox.Items.Clear();
             Application.Exit();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -83,7 +76,7 @@ namespace ProcessNote
             updateDetailedList();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void killProcessButton_Click(object sender, EventArgs e)
         {
             processes[TasksListBox.SelectedIndex-1].Kill();
         }
@@ -93,13 +86,13 @@ namespace ProcessNote
             processes[TasksListBox.SelectedIndex-1].Kill();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void onTopCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             ProcessNote.ActiveForm.TopMost = (ProcessNote.ActiveForm.TopMost == true) ? false : true;
             
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void detailedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateDetailedList();
         }
@@ -109,9 +102,9 @@ namespace ProcessNote
             try
             {
                 Process focusedProcess = processes[TasksListBox.SelectedIndex - 1];
-                DetailedListBox.Items.Clear();
-                DetailedListBox.Items.Add("Process Name:\t" + Convert.ToString(focusedProcess.ProcessName));
-                DetailedListBox.Items.Add("Process ID:\t" + Convert.ToString(focusedProcess.Id));
+                detailedListBox.Items.Clear();
+                detailedListBox.Items.Add("Process Name:\t" + Convert.ToString(focusedProcess.ProcessName));
+                detailedListBox.Items.Add("Process ID:\t" + Convert.ToString(focusedProcess.Id));
                 string processStart;
                 string RunningTime;
                 try
@@ -125,26 +118,22 @@ namespace ProcessNote
                     RunningTime = "Access Denied";
 
                 }
-                DetailedListBox.Items.Add("Start Time:\t" + processStart);
-                DetailedListBox.Items.Add("Runnig Time:\t" + RunningTime);
-                DetailedListBox.Items.Add("Allocated Memory:\t" + Convert.ToString(focusedProcess.PrivateMemorySize64 / 1048576) + " MB");
-                DetailedListBox.Items.Add("CPU usage:\t" + "1%");
-                DetailedListBox.Items.Add("Number of Threads:\t" + Convert.ToString(focusedProcess.Threads.Count));
+                detailedListBox.Items.Add("Start Time:\t" + processStart);
+                detailedListBox.Items.Add("Runnig Time:\t" + RunningTime);
+                detailedListBox.Items.Add("Allocated Memory:\t" + Convert.ToString(focusedProcess.PrivateMemorySize64 / 1048576) + " MB");
+                //DetailedListBox.Items.Add("CPU usage:\t" + "1%");
+                detailedListBox.Items.Add("Number of Threads:\t" + Convert.ToString(focusedProcess.Threads.Count));
             }
-            catch (Exception)
+            catch (ArgumentOutOfRangeException)
             {
             }
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void addCommentButton_Click(object sender, EventArgs e)
         {
             int selected = TasksListBox.SelectedIndex;
             TasksListBox.Items[selected] += "\tComment: " + CommentFieldTextBox.Text;
+            CommentFieldTextBox.Clear();
         }
     }
 }

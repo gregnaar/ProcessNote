@@ -36,19 +36,19 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.performanceCounterCPU = new System.Diagnostics.PerformanceCounter();
             this.performanceCounterRAM = new System.Diagnostics.PerformanceCounter();
-            this.DetailedListBox = new System.Windows.Forms.ListBox();
+            this.detailedListBox = new System.Windows.Forms.ListBox();
             this.CommentFieldLabel = new System.Windows.Forms.Label();
             this.CommentFieldTextBox = new System.Windows.Forms.TextBox();
-            this.AddCommentButton = new System.Windows.Forms.Button();
-            this.EndProcessButton = new System.Windows.Forms.Button();
+            this.addCommentButton = new System.Windows.Forms.Button();
+            this.killProcessButton = new System.Windows.Forms.Button();
             this.Processlabel = new System.Windows.Forms.Label();
-            this.ExitApplicationButton = new System.Windows.Forms.Button();
+            this.exitApplicationButton = new System.Windows.Forms.Button();
             this.ProcessValueLabel = new System.Windows.Forms.Label();
             this.CpuUsageLabel = new System.Windows.Forms.Label();
             this.CpuUsageValueLabel = new System.Windows.Forms.Label();
             this.AvailableMemoryLabel = new System.Windows.Forms.Label();
             this.AvailableMemoryValueLabel = new System.Windows.Forms.Label();
-            this.OnTopcheckBox = new System.Windows.Forms.CheckBox();
+            this.onTopCheckBox = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.TasksListBox.Name = "TasksListBox";
             this.TasksListBox.Size = new System.Drawing.Size(374, 306);
             this.TasksListBox.TabIndex = 0;
-            this.TasksListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.TasksListBox.SelectedIndexChanged += new System.EventHandler(this.detailedListBox_SelectedIndexChanged);
             // 
             // KillProcessMenuStrip
             // 
@@ -107,18 +107,18 @@
             this.performanceCounterRAM.CategoryName = "Memory";
             this.performanceCounterRAM.CounterName = "Available MBytes";
             // 
-            // DetailedListBox
+            // detailedListBox
             // 
-            this.DetailedListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
-            this.DetailedListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DetailedListBox.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DetailedListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DetailedListBox.FormattingEnabled = true;
-            this.DetailedListBox.ItemHeight = 16;
-            this.DetailedListBox.Location = new System.Drawing.Point(385, 267);
-            this.DetailedListBox.Name = "DetailedListBox";
-            this.DetailedListBox.Size = new System.Drawing.Size(256, 146);
-            this.DetailedListBox.TabIndex = 13;
+            this.detailedListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
+            this.detailedListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.detailedListBox.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.detailedListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.detailedListBox.FormattingEnabled = true;
+            this.detailedListBox.ItemHeight = 16;
+            this.detailedListBox.Location = new System.Drawing.Point(385, 267);
+            this.detailedListBox.Name = "detailedListBox";
+            this.detailedListBox.Size = new System.Drawing.Size(256, 146);
+            this.detailedListBox.TabIndex = 13;
             // 
             // CommentFieldLabel
             // 
@@ -141,31 +141,30 @@
             this.CommentFieldTextBox.Name = "CommentFieldTextBox";
             this.CommentFieldTextBox.Size = new System.Drawing.Size(250, 20);
             this.CommentFieldTextBox.TabIndex = 15;
-            this.CommentFieldTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
-            // AddCommentButton
+            // addCommentButton
             // 
-            this.AddCommentButton.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AddCommentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
-            this.AddCommentButton.Location = new System.Drawing.Point(541, 243);
-            this.AddCommentButton.Name = "AddCommentButton";
-            this.AddCommentButton.Size = new System.Drawing.Size(94, 23);
-            this.AddCommentButton.TabIndex = 16;
-            this.AddCommentButton.Text = "Add Comment";
-            this.AddCommentButton.UseVisualStyleBackColor = true;
-            this.AddCommentButton.Click += new System.EventHandler(this.button3_Click);
+            this.addCommentButton.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addCommentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
+            this.addCommentButton.Location = new System.Drawing.Point(541, 243);
+            this.addCommentButton.Name = "addCommentButton";
+            this.addCommentButton.Size = new System.Drawing.Size(94, 23);
+            this.addCommentButton.TabIndex = 16;
+            this.addCommentButton.Text = "Add Comment";
+            this.addCommentButton.UseVisualStyleBackColor = true;
+            this.addCommentButton.Click += new System.EventHandler(this.addCommentButton_Click);
             // 
-            // EndProcessButton
+            // killProcessButton
             // 
-            this.EndProcessButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EndProcessButton.ForeColor = System.Drawing.Color.Maroon;
-            this.EndProcessButton.Location = new System.Drawing.Point(297, 41);
-            this.EndProcessButton.Name = "EndProcessButton";
-            this.EndProcessButton.Size = new System.Drawing.Size(94, 30);
-            this.EndProcessButton.TabIndex = 3;
-            this.EndProcessButton.Text = "End Process";
-            this.EndProcessButton.UseVisualStyleBackColor = true;
-            this.EndProcessButton.Click += new System.EventHandler(this.button2_Click);
+            this.killProcessButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.killProcessButton.ForeColor = System.Drawing.Color.Maroon;
+            this.killProcessButton.Location = new System.Drawing.Point(297, 41);
+            this.killProcessButton.Name = "killProcessButton";
+            this.killProcessButton.Size = new System.Drawing.Size(94, 30);
+            this.killProcessButton.TabIndex = 3;
+            this.killProcessButton.Text = "End Process";
+            this.killProcessButton.UseVisualStyleBackColor = true;
+            this.killProcessButton.Click += new System.EventHandler(this.killProcessButton_Click);
             // 
             // Processlabel
             // 
@@ -177,18 +176,18 @@
             this.Processlabel.TabIndex = 5;
             this.Processlabel.Text = "Processes :";
             // 
-            // ExitApplicationButton
+            // exitApplicationButton
             // 
-            this.ExitApplicationButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ExitApplicationButton.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ExitApplicationButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
-            this.ExitApplicationButton.Location = new System.Drawing.Point(276, 90);
-            this.ExitApplicationButton.Name = "ExitApplicationButton";
-            this.ExitApplicationButton.Size = new System.Drawing.Size(136, 28);
-            this.ExitApplicationButton.TabIndex = 1;
-            this.ExitApplicationButton.Text = "Close Application";
-            this.ExitApplicationButton.UseVisualStyleBackColor = false;
-            this.ExitApplicationButton.Click += new System.EventHandler(this.button1_Click);
+            this.exitApplicationButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.exitApplicationButton.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.exitApplicationButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
+            this.exitApplicationButton.Location = new System.Drawing.Point(276, 90);
+            this.exitApplicationButton.Name = "exitApplicationButton";
+            this.exitApplicationButton.Size = new System.Drawing.Size(136, 28);
+            this.exitApplicationButton.TabIndex = 1;
+            this.exitApplicationButton.Text = "Close Application";
+            this.exitApplicationButton.UseVisualStyleBackColor = false;
+            this.exitApplicationButton.Click += new System.EventHandler(this.exitApplicationButton_Click);
             // 
             // ProcessValueLabel
             // 
@@ -240,17 +239,17 @@
             this.AvailableMemoryValueLabel.TabIndex = 10;
             this.AvailableMemoryValueLabel.Text = "0";
             // 
-            // OnTopcheckBox
+            // onTopCheckBox
             // 
-            this.OnTopcheckBox.AutoSize = true;
-            this.OnTopcheckBox.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.OnTopcheckBox.Location = new System.Drawing.Point(12, 10);
-            this.OnTopcheckBox.Name = "OnTopcheckBox";
-            this.OnTopcheckBox.Size = new System.Drawing.Size(136, 26);
-            this.OnTopcheckBox.TabIndex = 12;
-            this.OnTopcheckBox.Text = "Always on top";
-            this.OnTopcheckBox.UseVisualStyleBackColor = true;
-            this.OnTopcheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.onTopCheckBox.AutoSize = true;
+            this.onTopCheckBox.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.onTopCheckBox.Location = new System.Drawing.Point(12, 10);
+            this.onTopCheckBox.Name = "onTopCheckBox";
+            this.onTopCheckBox.Size = new System.Drawing.Size(136, 26);
+            this.onTopCheckBox.TabIndex = 12;
+            this.onTopCheckBox.Text = "Always on top";
+            this.onTopCheckBox.UseVisualStyleBackColor = true;
+            this.onTopCheckBox.CheckedChanged += new System.EventHandler(this.onTopCheckBox_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -269,18 +268,18 @@
             this.panel1.Controls.Add(this.Harrr);
             this.panel1.Controls.Add(this.TasksListBox);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.AddCommentButton);
-            this.panel1.Controls.Add(this.OnTopcheckBox);
+            this.panel1.Controls.Add(this.addCommentButton);
+            this.panel1.Controls.Add(this.onTopCheckBox);
             this.panel1.Controls.Add(this.CommentFieldLabel);
             this.panel1.Controls.Add(this.CommentFieldTextBox);
             this.panel1.Controls.Add(this.AvailableMemoryValueLabel);
             this.panel1.Controls.Add(this.AvailableMemoryLabel);
             this.panel1.Controls.Add(this.CpuUsageValueLabel);
             this.panel1.Controls.Add(this.CpuUsageLabel);
-            this.panel1.Controls.Add(this.ExitApplicationButton);
+            this.panel1.Controls.Add(this.exitApplicationButton);
             this.panel1.Controls.Add(this.ProcessValueLabel);
             this.panel1.Controls.Add(this.Processlabel);
-            this.panel1.Controls.Add(this.EndProcessButton);
+            this.panel1.Controls.Add(this.killProcessButton);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(652, 430);
@@ -325,7 +324,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(653, 425);
-            this.Controls.Add(this.DetailedListBox);
+            this.Controls.Add(this.detailedListBox);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -350,19 +349,19 @@
         private System.Windows.Forms.Timer timer;
         private System.Diagnostics.PerformanceCounter performanceCounterCPU;
         private System.Diagnostics.PerformanceCounter performanceCounterRAM;
-        private System.Windows.Forms.ListBox DetailedListBox;
+        private System.Windows.Forms.ListBox detailedListBox;
         private System.Windows.Forms.Label CommentFieldLabel;
         private System.Windows.Forms.TextBox CommentFieldTextBox;
-        private System.Windows.Forms.Button AddCommentButton;
-        private System.Windows.Forms.Button EndProcessButton;
+        private System.Windows.Forms.Button addCommentButton;
+        private System.Windows.Forms.Button killProcessButton;
         private System.Windows.Forms.Label Processlabel;
-        private System.Windows.Forms.Button ExitApplicationButton;
+        private System.Windows.Forms.Button exitApplicationButton;
         private System.Windows.Forms.Label ProcessValueLabel;
         private System.Windows.Forms.Label CpuUsageLabel;
         private System.Windows.Forms.Label CpuUsageValueLabel;
         private System.Windows.Forms.Label AvailableMemoryLabel;
         private System.Windows.Forms.Label AvailableMemoryValueLabel;
-        private System.Windows.Forms.CheckBox OnTopcheckBox;
+        private System.Windows.Forms.CheckBox onTopCheckBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Harrr;
