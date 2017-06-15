@@ -51,9 +51,9 @@
             this.OnTopcheckBox = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Harrr = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Harrr = new System.Windows.Forms.Label();
             this.KillProcessMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.performanceCounterCPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.performanceCounterRAM)).BeginInit();
@@ -254,7 +254,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::ProcessNote.Properties.Resources.HAR;
             this.pictureBox1.Location = new System.Drawing.Point(439, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(161, 159);
@@ -286,16 +286,16 @@
             this.panel1.Size = new System.Drawing.Size(652, 430);
             this.panel1.TabIndex = 17;
             // 
-            // Harrr
+            // label2
             // 
-            this.Harrr.AutoSize = true;
-            this.Harrr.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Harrr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
-            this.Harrr.Location = new System.Drawing.Point(555, 11);
-            this.Harrr.Name = "Harrr";
-            this.Harrr.Size = new System.Drawing.Size(86, 37);
-            this.Harrr.TabIndex = 17;
-            this.Harrr.Text = "Harrr!";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
+            this.label2.Location = new System.Drawing.Point(377, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 28);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Harrr!";
             // 
             // label1
             // 
@@ -308,16 +308,16 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Harrr!";
             // 
-            // label2
+            // Harrr
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
-            this.label2.Location = new System.Drawing.Point(377, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 28);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Harrr!";
+            this.Harrr.AutoSize = true;
+            this.Harrr.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Harrr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
+            this.Harrr.Location = new System.Drawing.Point(555, 11);
+            this.Harrr.Name = "Harrr";
+            this.Harrr.Size = new System.Drawing.Size(86, 37);
+            this.Harrr.TabIndex = 17;
+            this.Harrr.Text = "Harrr!";
             // 
             // ProcessNote
             // 
